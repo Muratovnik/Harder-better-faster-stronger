@@ -1,0 +1,9 @@
+.keyboard-key {
+  padding: 10px;
+  background-color: rgb(74, 198, 255);
+}
+
+.keyboard-key-active {
+  composes: keyboard-key;
+  background-color: rgb(98, 0, 255);
+}
