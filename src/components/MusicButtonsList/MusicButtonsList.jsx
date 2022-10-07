@@ -1,6 +1,6 @@
 import { useCallback, useState, useMemo } from "react";
 
-import { useEvent } from "react-use";
+import { useEvent, useMount } from "react-use";
 
 import styles from "./MusicButtonsList.module.css";
 
@@ -93,14 +93,17 @@ const MusicButtonsList = () => {
 
   const [currentMode, setCurentMode] = useState(1);
   const [pressedKey, setPressedKey] = useState(null);
+  const [location, setLocation] = useState(null);
 
   const sources = useMemo(
     () =>
       sounds.map((sound) => ({
         key: sound.keyCode,
-        url: `/static/${sound.name}.mp3`,
         audios: modes.map(
-          (num) => new Audio(`/static/${sound.name + num}.mp3`)
+          (num) =>
+            new Audio(
+              `${process.env.PUBLIC_URL}/sounds/${sound.name + num}.mp3`
+            )
         ),
       })),
     [modes, sounds]
@@ -116,6 +119,7 @@ const MusicButtonsList = () => {
 
         if (sound) {
           sound.audios[currentMode - 1].play();
+          console.log(sound.audios[currentMode - 1].src);
         }
       }
     },
@@ -125,6 +129,10 @@ const MusicButtonsList = () => {
   useEvent("keydown", onKeyDown);
   useEvent("keyup", () => {
     setPressedKey(null);
+  });
+
+  useMount(() => {
+    setLocation(window.location.origin + window.location.pathname);
   });
 
   return (
