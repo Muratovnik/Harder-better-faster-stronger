@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Harder-better-faster-stronger/static/css/main.ded179af.css",
-    "main.js": "/Harder-better-faster-stronger/static/js/main.d1106f08.js",
+    "main.js": "/Harder-better-faster-stronger/static/js/main.5b9a3537.js",
     "index.html": "/Harder-better-faster-stronger/index.html",
     "main.ded179af.css.map": "/Harder-better-faster-stronger/static/css/main.ded179af.css.map",
-    "main.d1106f08.js.map": "/Harder-better-faster-stronger/static/js/main.d1106f08.js.map"
+    "main.5b9a3537.js.map": "/Harder-better-faster-stronger/static/js/main.5b9a3537.js.map"
   },
   "entrypoints": [
     "static/css/main.ded179af.css",
-    "static/js/main.d1106f08.js"
+    "static/js/main.5b9a3537.js"
   ]
 }
