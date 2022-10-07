@@ -119,7 +119,6 @@ const MusicButtonsList = () => {
 
         if (sound) {
           sound.audios[currentMode - 1].play();
-          console.log(sound.audios[currentMode - 1].src);
         }
       }
     },
